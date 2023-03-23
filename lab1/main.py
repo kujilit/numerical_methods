@@ -21,7 +21,7 @@ class Solution:
     def display(self, doc):
         with doc.create(pylatex.Section(f'Dimension: {self.dim}')):
             with doc.create(pylatex.Section(f'Epsilon:{self.eps}')):
-                doc.append(pylatex.Math(data=['(', pylatex.Matrix(self.arr_a), '+', self.eps,
+                doc.append(pylatex.Math(data=['(', pylatex.Matrix(self.arr_a), '+', '(', self.eps, ')',
                                               pylatex.Matrix(self.arr_n), ')x =',
                                               pylatex.Matrix(np.array([self.vector_b]).T)
                                               ]))
@@ -40,4 +40,4 @@ if __name__ == "__main__":
     Solution(6, 1e-5).display(doc)
     Solution(6, 1e-4).display(doc)
     Solution(6, 1e-3).display(doc)
-    doc.generate_pdf('full', clean_tex=False)
+    doc.generate_pdf('solution', clean_tex=False)
