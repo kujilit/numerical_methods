@@ -10,25 +10,240 @@
 %
 \begin{document}%
 \normalsize%
-\section{Lab 1}%
-\label{sec:Lab1}%
-\section{Matrix}%
-\label{sec:Matrix}%
+\section{Dimension: 3}%
+\label{sec:Dimension3}%
+\section{Epsilon:1e{-}06}%
+\label{sec:Epsilon1e{-}06}%
 \[%
-\begin{pmatrix}%
-1&-1&-1&-1&-1\\%
-0&1&-1&-1&-1\\%
-0&0&1&-1&-1\\%
-0&0&0&1&-1\\%
-0&0&0&0&1%
-\end{pmatrix} 0.001 \begin{pmatrix}%
-1&-1&-1&-1&-1\\%
-1&1&-1&-1&-1\\%
-1&1&1&-1&-1\\%
-1&1&1&1&-1\\%
-1&1&1&1&1%
-\end{pmatrix}
-\]
+( \begin{pmatrix}%
+1&-1&-1\\%
+0&1&-1\\%
+0&0&1%
+\end{pmatrix} + 1e{-}06 \begin{pmatrix}%
+1&-1&-1\\%
+1&1&-1\\%
+1&1&1%
+\end{pmatrix} )x = \begin{pmatrix}%
+-1\\%
+-1\\%
+1%
+\end{pmatrix}%
+\]%
+\begin{Large}%
+Condition number:%
+5.4114513925096235%
+\end{Large}
+
+%
+\section{Dimension: 3}%
+\label{sec:Dimension3}%
+\section{Epsilon:1e{-}05}%
+\label{sec:Epsilon1e{-}05}%
+\[%
+( \begin{pmatrix}%
+1&-1&-1\\%
+0&1&-1\\%
+0&0&1%
+\end{pmatrix} + 1e{-}05 \begin{pmatrix}%
+1&-1&-1\\%
+1&1&-1\\%
+1&1&1%
+\end{pmatrix} )x = \begin{pmatrix}%
+-1\\%
+-1\\%
+1%
+\end{pmatrix}%
+\]%
+\begin{Large}%
+Condition number:%
+5.411246785600582%
+\end{Large}
+
+%
+\section{Dimension: 3}%
+\label{sec:Dimension3}%
+\section{Epsilon:0.0001}%
+\label{sec:Epsilon0.0001}%
+\[%
+( \begin{pmatrix}%
+1&-1&-1\\%
+0&1&-1\\%
+0&0&1%
+\end{pmatrix} + 0.0001 \begin{pmatrix}%
+1&-1&-1\\%
+1&1&-1\\%
+1&1&1%
+\end{pmatrix} )x = \begin{pmatrix}%
+-1\\%
+-1\\%
+1%
+\end{pmatrix}%
+\]%
+\begin{Large}%
+Condition number:%
+5.409201784384474%
+\end{Large}
+
+%
+\section{Dimension: 3}%
+\label{sec:Dimension3}%
+\section{Epsilon:0.001}%
+\label{sec:Epsilon0.001}%
+\[%
+( \begin{pmatrix}%
+1&-1&-1\\%
+0&1&-1\\%
+0&0&1%
+\end{pmatrix} + 0.001 \begin{pmatrix}%
+1&-1&-1\\%
+1&1&-1\\%
+1&1&1%
+\end{pmatrix} )x = \begin{pmatrix}%
+-1\\%
+-1\\%
+1%
+\end{pmatrix}%
+\]%
+\begin{Large}%
+Condition number:%
+5.388858003640518%
+\end{Large}
+
+%
+\section{Dimension: 6}%
+\label{sec:Dimension6}%
+\section{Epsilon:1e{-}06}%
+\label{sec:Epsilon1e{-}06}%
+\[%
+( \begin{pmatrix}%
+1&-1&-1&-1&-1&-1\\%
+0&1&-1&-1&-1&-1\\%
+0&0&1&-1&-1&-1\\%
+0&0&0&1&-1&-1\\%
+0&0&0&0&1&-1\\%
+0&0&0&0&0&1%
+\end{pmatrix} + 1e{-}06 \begin{pmatrix}%
+1&-1&-1&-1&-1&-1\\%
+1&1&-1&-1&-1&-1\\%
+1&1&1&-1&-1&-1\\%
+1&1&1&1&-1&-1\\%
+1&1&1&1&1&-1\\%
+1&1&1&1&1&1%
+\end{pmatrix} )x = \begin{pmatrix}%
+-1\\%
+-1\\%
+-1\\%
+-1\\%
+-1\\%
+1%
+\end{pmatrix}%
+\]%
+\begin{Large}%
+Condition number:%
+69.8415813013427%
+\end{Large}
+
+%
+\section{Dimension: 6}%
+\label{sec:Dimension6}%
+\section{Epsilon:1e{-}05}%
+\label{sec:Epsilon1e{-}05}%
+\[%
+( \begin{pmatrix}%
+1&-1&-1&-1&-1&-1\\%
+0&1&-1&-1&-1&-1\\%
+0&0&1&-1&-1&-1\\%
+0&0&0&1&-1&-1\\%
+0&0&0&0&1&-1\\%
+0&0&0&0&0&1%
+\end{pmatrix} + 1e{-}05 \begin{pmatrix}%
+1&-1&-1&-1&-1&-1\\%
+1&1&-1&-1&-1&-1\\%
+1&1&1&-1&-1&-1\\%
+1&1&1&1&-1&-1\\%
+1&1&1&1&1&-1\\%
+1&1&1&1&1&1%
+\end{pmatrix} )x = \begin{pmatrix}%
+-1\\%
+-1\\%
+-1\\%
+-1\\%
+-1\\%
+1%
+\end{pmatrix}%
+\]%
+\begin{Large}%
+Condition number:%
+69.80552543514018%
+\end{Large}
+
+%
+\section{Dimension: 6}%
+\label{sec:Dimension6}%
+\section{Epsilon:0.0001}%
+\label{sec:Epsilon0.0001}%
+\[%
+( \begin{pmatrix}%
+1&-1&-1&-1&-1&-1\\%
+0&1&-1&-1&-1&-1\\%
+0&0&1&-1&-1&-1\\%
+0&0&0&1&-1&-1\\%
+0&0&0&0&1&-1\\%
+0&0&0&0&0&1%
+\end{pmatrix} + 0.0001 \begin{pmatrix}%
+1&-1&-1&-1&-1&-1\\%
+1&1&-1&-1&-1&-1\\%
+1&1&1&-1&-1&-1\\%
+1&1&1&1&-1&-1\\%
+1&1&1&1&1&-1\\%
+1&1&1&1&1&1%
+\end{pmatrix} )x = \begin{pmatrix}%
+-1\\%
+-1\\%
+-1\\%
+-1\\%
+-1\\%
+1%
+\end{pmatrix}%
+\]%
+\begin{Large}%
+Condition number:%
+69.44705155216691%
+\end{Large}
+
+%
+\section{Dimension: 6}%
+\label{sec:Dimension6}%
+\section{Epsilon:0.001}%
+\label{sec:Epsilon0.001}%
+\[%
+( \begin{pmatrix}%
+1&-1&-1&-1&-1&-1\\%
+0&1&-1&-1&-1&-1\\%
+0&0&1&-1&-1&-1\\%
+0&0&0&1&-1&-1\\%
+0&0&0&0&1&-1\\%
+0&0&0&0&0&1%
+\end{pmatrix} + 0.001 \begin{pmatrix}%
+1&-1&-1&-1&-1&-1\\%
+1&1&-1&-1&-1&-1\\%
+1&1&1&-1&-1&-1\\%
+1&1&1&1&-1&-1\\%
+1&1&1&1&1&-1\\%
+1&1&1&1&1&1%
+\end{pmatrix} )x = \begin{pmatrix}%
+-1\\%
+-1\\%
+-1\\%
+-1\\%
+-1\\%
+1%
+\end{pmatrix}%
+\]%
+\begin{Large}%
+Condition number:%
+66.05923671098316%
+\end{Large}
 
 %
 \end{document}
