@@ -18,28 +18,31 @@ class Solution:
 
         self.sum = 0
 
-        for i in range(self.dim):
-            for j in range(self.dim):
-                if i <= j:
-                    self.sum = 0
-                    for k in range(i):
-                        self.sum = self.l_matrix[i][k] * self.u_matrix[k][j]
-                    self.u_matrix[i][j] = matrix[i][j] - self.sum
-                if i > j:
-                    self.sum = 0
-                    for k in range(j):
-                        self.sum = self.l_matrix[i][k] * self.u_matrix[k][j]
-                    self.l_matrix[i][j] = (matrix[i][j] - self.sum) / self.u_matrix[j][j]
+        if is_invertible(matrix):
+            for i in range(self.dim):
+                for j in range(self.dim):
+                    if i <= j:
+                        self.sum = 0
+                        for k in range(i):
+                            self.sum = self.l_matrix[i][k] * self.u_matrix[k][j]
+                        self.u_matrix[i][j] = matrix[i][j] - self.sum
+                    if i > j:
+                        self.sum = 0
+                        for k in range(j):
+                            self.sum = self.l_matrix[i][k] * self.u_matrix[k][j]
+                        self.l_matrix[i][j] = (matrix[i][j] - self.sum) / self.u_matrix[j][j]
+        else:
+            print("Матрица вырожденная")
 
     def display(self):
-        print(self.l_matrix)
-        print(self.u_matrix)
+        print(f"Матрица L:\n {self.l_matrix}")
+        print(f"Матрица U:\n {self.u_matrix}")
 
     def get_system_solution(self, b: np.array):
         self.y = np.linalg.tensorsolve(self.l_matrix, b)
         self.x = np.linalg.tensorsolve(self.u_matrix, self.y)
 
-        print(self.x)
+        print(f"Решение: {self.x}\n")
 
 
 if __name__ == "__main__":
