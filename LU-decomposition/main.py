@@ -42,6 +42,9 @@ class Solution:
         self.y = np.linalg.tensorsolve(self.l_matrix, b)
         self.x = np.linalg.tensorsolve(self.u_matrix, self.y)
 
+        # self.y = np.matmul(np.linalg.inv(self.l_matrix), b)
+        # self.x = np.matmul(np.linalg.inv(self.u_matrix), self.y)
+
         print(f"Решение: {self.x}\n")
 
 
