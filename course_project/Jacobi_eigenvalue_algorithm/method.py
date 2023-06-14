@@ -3,8 +3,9 @@ from stuff import frobenius_norm
 
 
 class Jacobi:
-    def __init__(self, a):
+    def __init__(self, a: np.array, eps: float):
         self.a = a
+        self.eps = eps
         self.phi, self.i, self.j = 0, 0, 0
 
     def __get_phi(self):
@@ -14,7 +15,6 @@ class Jacobi:
         index_j = 1
         for i in range(1, self.a.shape[0]):
             for j in range(i + 1, self.a.shape[0]):
-                # print(matrix[i][j])
                 if abs(max_elem) < abs(matrix[i][j]):
                     max_elem = matrix[i][j]
                     index_i = i
@@ -37,24 +37,25 @@ class Jacobi:
     def __next_iteration(self):
         mat_T = self.__generate_rotation_matrix()
         mat_a = mat_T.transpose() @ self.a @ mat_T
-        # print(mat_a)
         return mat_a
 
     def __diagonalize(self):
-        while abs(self.a[self.i][self.j]) > 1e-4:
+        iterator = 0
+        while abs(self.a[self.i][self.j]) > self.eps:
             self.a = self.__next_iteration()
-            # print(self.a)
-        return self.a
+            iterator += 1
+        return self.a, iterator
 
     def display_eigvals(self):
         eigvals = []
         print(f"{frobenius_norm(self.a)} <– Фробениусова норма A до преобразований\n")
-        self.a = self.__diagonalize()
+        self.a, iterations = self.__diagonalize()
         print(f"{self.a} <– Матрица A после всех преобразований")
         print(f"{frobenius_norm(self.a)} <– Фробениусова норма A после преобразований\n")
         for i in range(self.a.shape[0]):
             eigvals.append(self.a[i][i])
         print(f"{eigvals} <– Элементы главной диагонали матрицы A")
+        print(f"Количество необходимых итераций: {iterations}")
 
 
 
