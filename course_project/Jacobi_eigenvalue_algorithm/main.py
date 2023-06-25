@@ -8,6 +8,6 @@ if __name__ == "__main__":
         print(f"============ Размерность: {a.shape[0]} ============")
         print(f"{a} <– Матрица A")
 
-        Jacobi(a, 1e-12).display_eigvals()
+        Jacobi(a, 1e-16).display_eigvals()
 
         print(f"{np.linalg.eigvals(a)} <– Ожидаемые собственные значения")

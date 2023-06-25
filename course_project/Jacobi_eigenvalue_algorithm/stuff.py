@@ -1,4 +1,5 @@
 import numpy as np
+from matrix_generator import generate_matrix
 
 
 def trace(a: np.array) -> float:
@@ -16,16 +17,6 @@ def frobenius_norm(a: np.array) -> float:
     return np.sqrt(trace(a.transpose() @ a))
 
 
-data = [np.array([
-    [4.22, -0.003, 0.002, 0.005],
-    [-0.003, 0.3, -0.006, 0.004],
-    [0.002, -0.006, 1.6, -0.001],
-    [0.005, 0.004, -0.001, 1.71]]),
-        np.array([
-    [4.22, -0.003, 0.002],
-    [-0.003, 0.3, -0.006],
-    [0.002, -0.006, 1.6]]),
-        np.array([
-    [4.22, 200],
-    [200, 0.3]]),
-]
+data = []
+for i in range(3, 10):
+    data.append(generate_matrix(i))
