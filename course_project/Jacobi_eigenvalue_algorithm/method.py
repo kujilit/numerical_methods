@@ -1,5 +1,6 @@
 import numpy as np
 from stuff import frobenius_norm
+import matplotlib.pyplot as plt
 
 
 class Jacobi:
@@ -7,6 +8,7 @@ class Jacobi:
         self.a = a
         self.eps = eps
         self.phi, self.i, self.j = 0, 0, 0
+        self.max_values = []
 
     def __get_phi(self):
         matrix = np.triu(self.a, 1)
@@ -22,7 +24,7 @@ class Jacobi:
         if self.a[index_i][index_i] == self.a[index_j][index_j]:
             return np.pi/4, index_i, index_j
         else:
-            return 0.5 * np.arctan(2 * max_elem / (self.a[index_i][index_i] - self.a[index_j][index_j])), index_i, index_j
+            return abs(0.5 * np.arctan(2 * max_elem / (self.a[index_i][index_i] - self.a[index_j][index_j]))), index_i, index_j
 
     def __generate_rotation_matrix(self):
         self.phi, self.i, self.j = self.__get_phi()
@@ -36,12 +38,13 @@ class Jacobi:
 
     def __next_iteration(self):
         mat_T = self.__generate_rotation_matrix()
-        mat_a = mat_T.transpose() @ self.a @ mat_T
+        mat_a = mat_T.T @ self.a @ mat_T
         return mat_a
 
     def __diagonalize(self):
         iterator = 0
         while abs(self.a[self.i][self.j]) > self.eps:
+            self.max_values.append(self.a[self.i][self.j])
             self.a = self.__next_iteration()
             iterator += 1
         return self.a, iterator
@@ -56,6 +59,8 @@ class Jacobi:
             eigvals.append(self.a[i][i])
         print(f"{eigvals} <– Элементы главной диагонали матрицы A")
         print(f"Количество необходимых итераций: {iterations}")
+        plt.plot(self.max_values)
+        plt.show()
 
 
 
