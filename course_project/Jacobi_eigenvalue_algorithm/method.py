@@ -12,7 +12,7 @@ class Jacobi:
 
     def __get_phi(self):
         matrix = np.triu(self.a, 1)
-        max_elem = matrix[0][1]
+        max_elem = matrix[1][1]
         index_i = 0
         index_j = 1
         for i in range(1, self.a.shape[0]):
@@ -24,7 +24,7 @@ class Jacobi:
         if self.a[index_i][index_i] == self.a[index_j][index_j]:
             return np.pi/4, index_i, index_j
         else:
-            return abs(0.5 * np.arctan(2 * max_elem / (self.a[index_i][index_i] - self.a[index_j][index_j]))), index_i, index_j
+            return 0.5 * np.arctan(2 * max_elem / (self.a[index_i][index_i] - self.a[index_j][index_j])), index_i, index_j
 
     def __generate_rotation_matrix(self):
         self.phi, self.i, self.j = self.__get_phi()

@@ -2,6 +2,7 @@ import numpy as np
 from method import Jacobi
 from stuff import data
 
+np.set_printoptions(linewidth=1000, precision=2, suppress=True)
 
 if __name__ == "__main__":
     for a in data:
